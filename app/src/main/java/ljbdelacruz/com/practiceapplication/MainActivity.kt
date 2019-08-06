@@ -7,23 +7,20 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val usernameTF=findViewById<EditText>(R.id.login_usernameTF);
-        val passwordTF=findViewById<EditText>(R.id.login_passwordTF);
-        val loginButton=findViewById<Button>(R.id.login_loginBtn);
-        val forgotPasswordButton=findViewById<Button>(R.id.login_forgotPasswordBtn)
         window.decorView.apply {
             systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         }
-        loginButton.setOnClickListener{
-            this.processLogin(username = usernameTF.text.toString(), password = passwordTF.text.toString())
+        login_loginBtn.setOnClickListener{
+            this.processLogin(username = login_usernameTF.text.toString(), password = login_passwordTF.text.toString())
         }
-        forgotPasswordButton.setOnClickListener{
+        login_forgotPasswordBtn.setOnClickListener{
             this.forgotPassword();
         }
     }
