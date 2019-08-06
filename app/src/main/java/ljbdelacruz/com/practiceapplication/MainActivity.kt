@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun processLogin(username:String, password:String){
-        print("Login")
-        print(username)
-        print(password)
         //do oauth here
         val intent = Intent(this, Dashboard::class.java)
         // start your next activity
