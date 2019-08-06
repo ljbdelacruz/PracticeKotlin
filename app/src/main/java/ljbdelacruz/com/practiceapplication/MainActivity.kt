@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 
@@ -15,6 +16,10 @@ class MainActivity : AppCompatActivity() {
         val usernameTF=findViewById<EditText>(R.id.login_usernameTF);
         val passwordTF=findViewById<EditText>(R.id.login_passwordTF);
         val loginButton=findViewById<Button>(R.id.login_loginBtn);
+        window.decorView.apply {
+            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        }
+
         loginButton.setOnClickListener{
             this.processLogin(username = usernameTF.text.toString(), password = passwordTF.text.toString())
         }
