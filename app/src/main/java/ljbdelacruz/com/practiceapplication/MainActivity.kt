@@ -1,5 +1,6 @@
 package ljbdelacruz.com.practiceapplication
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,9 +24,14 @@ class MainActivity : AppCompatActivity() {
         print(username)
         print(password)
         //do oauth here
+        val intent = Intent(this, Dashboard::class.java)
+        // start your next activity
+        startActivity(intent)
     }
     fun forgotPassword(){
-        
+        val intent = Intent(this, ForgotPassword::class.java)
+        // start your next activity
+        startActivity(intent)
     }
 
 
