@@ -16,12 +16,11 @@ class Dashboard : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        val ads:ArrayList<String> = ArrayList();
-        for (i in 1..51) {
-            ads.add("Lainel Version: #$i");
-        }
+        var ads:ArrayList<String> = ArrayList();
+        ads=getArrayList(limit=10);
 
         dashboard_searchBtn.setOnClickListener{
+            ads=getArrayList(limit=20)
             this.searchButtonOnClick(search = dashboard_searchItem.text.toString(), list=ads);
         }
         dashboard_adsDisplay.layoutManager= LinearLayoutManager(this);
@@ -30,6 +29,14 @@ class Dashboard : AppCompatActivity() {
     }
     fun searchButtonOnClick(search:String, list:ArrayList<String>){
         Log.i("SearchButton", "Searching Item...."+search)
+        dashboard_adsDisplay.adapter=UsersAdapter(list)
+    }
+    fun getArrayList(limit:Int):ArrayList<String>{
+        val ads:ArrayList<String> = ArrayList();
+        for (i in 1..limit) {
+            ads.add("Lainel Version: #$i");
+        }
+        return ads;
     }
 
 }
