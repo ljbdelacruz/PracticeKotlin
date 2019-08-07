@@ -23,7 +23,7 @@ class Dashboard : AppCompatActivity() {
             ads=getArrayList(limit=20)
             this.searchButtonOnClick(search = dashboard_searchItem.text.toString(), list=ads);
         }
-        dashboard_adsDisplay.layoutManager= LinearLayoutManager(this);
+        dashboard_adsDisplay.layoutManager = LinearLayoutManager(this);
         dashboard_adsDisplay.adapter=UsersAdapter(ads);
 
     }
